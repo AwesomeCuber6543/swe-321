@@ -5,7 +5,6 @@ from app.schemas.settings import Settings
 def get_settings():
     load_dotenv("project.env")
     
-    # Filter os.environ to only include the keys we want
     settings_dict = {
         key: value 
         for key, value in os.environ.items() 

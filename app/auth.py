@@ -1,16 +1,16 @@
 from datetime import datetime, timedelta
 from typing import Optional
+import time
+import secrets
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-import time
-import secrets
 from .settings import get_settings
 from .schemas.settings import Settings
 from .schemas.models import *
+from .database import Database, get_db
 
-# Configuration
 settings: Settings = get_settings()
 
 SECRET_KEY = settings.SECRET_KEY
@@ -27,12 +27,14 @@ def verify_password(plain_password, hashed_password):
 def get_password_hash(password):
     return pwd_context.hash(password)
 
-async def get_user(email: str):
-    db = get_db()
+async def get_user(email: str, db: Database):
     response = db.users.get_item(Key={'email': email})
     if 'Item' not in response:
         return None
     return UserInDB(**response['Item'])
+
+async def get_user_by_email(email: str, db: Database):
+    return db.users.get_item(Key={'email': email})
 
 async def authenticate_user(email: str, password: str, db: Database):
     response = await get_user_by_email(email, db)
@@ -69,7 +71,8 @@ async def store_tokens(user_id: str, access_token: str, refresh_token: str, db: 
         }
     )
 
-async def get_current_user(token: str = Depends(oauth2_scheme)):
+async def get_current_user(token: str = Depends(oauth2_scheme), db_connection = Depends(get_db)):
+    db = Database(db_connection)
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -84,7 +87,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     except JWTError:
         raise credentials_exception
         
-    user = await get_user(token_data.user_id)
+    user = await get_user(token_data.user_id, db)
     if user is None:
         raise credentials_exception
     return user
