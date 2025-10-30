@@ -12,10 +12,10 @@ const HeroSplit = () => {
       <nav className="flex justify-between items-center px-16 py-6 text-base font-semibold">
         {/* Left Nav Links (Home, Buy, Rent...) */}
         <div className="flex space-x-8">
-            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Home</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Buy</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Rent</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Search / Browse</a>
+            <a href="/" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Home</a>
+            <a href="/Buy" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Buy</a>
+            <a href="/Rent" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Rent</a>
+            <a href="/Search_Browse" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Search / Browse</a>
         </div>
         
         {/* Right Nav Links (Saved Listings, Login/Sign Up) */}
