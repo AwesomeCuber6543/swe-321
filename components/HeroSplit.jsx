@@ -1,0 +1,91 @@
+// components/HeroSplit.jsx
+
+import React from "react";
+import Image from "next/image";
+
+const HeroSplit = () => {
+  return (
+    // 1. Main container for the entire hero section
+    <div className="flex flex-col h-screen bg-white"> 
+        
+      {/* === 1. TOP NAVIGATION (Full Width) === */}
+      <nav className="flex justify-between items-center px-16 py-6 text-base font-semibold">
+        {/* Left Nav Links (Home, Buy, Rent...) */}
+        <div className="flex space-x-8">
+            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Home</a>
+            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Buy</a>
+            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Rent</a>
+            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors transform hover:scale-105 duration-200">Search / Browse</a>
+        </div>
+        
+        {/* Right Nav Links (Saved Listings, Login/Sign Up) */}
+        <div>
+            <a href="#" className="text-gray-600 hover:text-blue-800 mr-4 transition-colors transform hover:scale-105 duration-200">Saved Listings</a>
+            <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-base font-semibold hover:bg-blue-700 transition-colors transform hover:scale-105 duration-200">
+                Login / Sign Up
+            </button>
+        </div>
+      </nav>
+
+      {/* 2. SPLIT CONTENT (Takes up remaining vertical space) */}
+      <div className="flex flex-grow"> 
+          
+        {/* === Left Side: Image (50% Width) === */}
+        <div className="relative w-1/2 h-full overflow-hidden">
+          <Image
+            src="/images/split-hero.jpg"
+            alt="Modern staircase with city view"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={100}
+          />
+        </div>
+
+        {/* === Right side - content (50% Width) === */}
+        <div className="w-1/2 flex flex-col justify-center px-20 bg-white text-center">
+          
+          {/* Main text */}
+          {/* CHANGE 1: Increased max-width to 'max-w-xl' to give the heading more horizontal space */}
+          <div className="max-w-xl mx-auto">
+            {/* ⬅️ CHANGED text-7xl to text-6xl ⬅️ */}
+            {/* CHANGE 2: Removed <br /> to put "Live Your Lifestyle." on the second line */}
+            <h1 className="text-6xl font-extrabold text-blue-800 leading-tight mb-6">
+              Find Your Home. Live Your Lifestyle.
+            </h1>
+            <p className="text-gray-600 text-xl mb-12">
+              Tell us what you want, we’ll find it.
+            </p>
+
+            {/* Search bar - CHANGED w-[420px] to w-[500px] ⬅️ */}
+            <div className="flex items-center bg-blue-600 rounded-full shadow-md w-[500px] px-4 py-3 
+                          transition duration-300 transform hover:scale-[1.01] cursor-pointer mx-auto">
+              <input
+                type="text"
+                placeholder="e.g., single-story home with hardwood floors"
+                className="flex-grow text-white placeholder-white/80 bg-transparent focus:outline-none text-center"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="white"
+                className="w-5 h-5 ml-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> // End of Main container
+  );
+};
+
+export default HeroSplit;
