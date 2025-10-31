@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import NavBar from "./NavBar";
 
+
 const HeroSplit = () => {
   return (
     // 1. Main container for the entire hero section
