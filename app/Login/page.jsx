@@ -21,7 +21,7 @@ const LoginPage = () => {
 
           {/* Continue with Email Button */}
           <button className="w-full bg-blue-800 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition-colors mb-4 text-center">
-            Login or Sign Up
+            Continue
           </button>
 
           <div className="text-center text-gray-400 my-4">— OR —</div>
