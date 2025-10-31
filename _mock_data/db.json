@@ -1,0 +1,299 @@
+{
+    "listings": [
+    {
+        "id": 1,
+        "title_name": "Charming Downtown Studio",
+        "address": "123 Main St, Apt 4A, Anytown, CA 90210",
+        "description": "Cozy studio apartment in the heart of downtown. Perfect for a young professional. Includes in-unit laundry.",
+        "price": 350000.00,
+        "features": [
+        "1 Bed",
+        "1 Bath",
+        "550 sqft",
+        "In-unit Washer/Dryer",
+        "Walk to shops"
+        ],
+        "image_urls": [
+        "/listing_images/url1.jpg"
+        ],
+        "embedding": [0.1, 0.2, 0.3],
+        "upload_date": "2025-09-15"
+    },
+    {
+        "id": 2,
+        "title_name": "Modern Suburban Family Home",
+        "address": "456 Oak Ave, Suburbia, TX 77001",
+        "description": "Spacious 4 bed, 3 bath home with a large backyard and a two-car garage. Recently renovated kitchen. Excellent school district.",
+        "price": 685500.00,
+        "features": [
+        "4 Bed",
+        "3 Bath",
+        "2,800 sqft",
+        "2-Car Garage",
+        "Fenced Yard",
+        "New Kitchen"
+        ],
+        "image_urls": [
+        "/listing_images/url2.jpg"
+        ],
+        "embedding": [0.4, 0.5, 0.6],
+        "upload_date": "2025-10-01"
+    },
+    {
+        "id": 3,
+        "title_name": "Luxury Penthouse with City View",
+        "address": "789 High Rise Blvd, Unit 3001, Metropolis, NY 10001",
+        "description": "Exclusive penthouse living with panoramic city views. Features include a private elevator, gourmet kitchen, and rooftop terrace access.",
+        "price": 4500000.00,
+        "features": [
+        "3 Bed",
+        "3.5 Bath",
+        "3,200 sqft",
+        "Private Elevator",
+        "Rooftop Access",
+        "Doorman"
+        ],
+        "image_urls": [
+        "/listing_images/url3.jpg"
+        ],
+        "embedding": [0.7, 0.8, 0.9],
+        "upload_date": "2025-08-20"
+    },
+    {
+        "id": 4,
+        "title_name": "Rustic Cabin Retreat",
+        "address": "101 Forest Ln, Woodsboro, OR 97201",
+        "description": "Secluded 2 bed cabin nestled in the woods. Ideal for nature lovers. Features a wood-burning fireplace and a large deck.",
+        "price": 225000.00,
+        "features": [
+        "2 Bed",
+        "1 Bath",
+        "900 sqft",
+        "Wood Fireplace",
+        "Large Deck",
+        "Mountain View"
+        ],
+        "image_urls": [
+        "/listing_images/url4.jpg"
+        ],
+        "embedding": [1.0, 1.1, 1.2],
+        "upload_date": "2025-09-28"
+    },
+    {
+        "id": 5,
+        "title_name": "Investor Special: Fixer-Upper Duplex",
+        "address": "222 Broken Tile Dr, Oldtown, FL 33101",
+        "description": "Great investment opportunity. Two-unit duplex needing full renovation. High rental potential in an up-and-coming neighborhood.",
+        "price": 150000.00,
+        "features": [
+        "2 Units",
+        "Total 4 Bed",
+        "Needs Renovation",
+        "High ROI Potential"
+        ],
+        "image_urls": [
+        "/listing_images/url5.jpg"
+        ],
+        "embedding": [1.3, 1.4, 1.5],
+        "upload_date": "2025-10-25"
+    },
+    {
+        "id": 6,
+        "title_name": "Beachfront Condo with Balcony",
+        "address": "333 Ocean Way, Condo 12B, Sunnyside, HI 96815",
+        "description": "Direct beachfront property. 2 bed, 2 bath condo with a large balcony overlooking the Pacific. Community pool and gym.",
+        "price": 995000.00,
+        "features": [
+        "2 Bed",
+        "2 Bath",
+        "1,100 sqft",
+        "Beach Access",
+        "Community Pool",
+        "Gym"
+        ],
+        "image_urls": [
+        "/listing_images/url6.jpg"
+        ],
+        "embedding": [1.6, 1.7, 1.8],
+        "upload_date": "2025-10-10"
+    },
+    {
+        "id": 7,
+        "title_name": "Sprawling Ranch on Acreage",
+        "address": "444 Country Rd, Heartland, KS 66002",
+        "description": "Expansive 5 bed ranch home on 10 acres of land. Includes a large barn and workshop. Perfect for horses or farming.",
+        "price": 799000.00,
+        "features": [
+        "5 Bed",
+        "4 Bath",
+        "3,500 sqft",
+        "10 Acres",
+        "Barn",
+        "Workshop"
+        ],
+        "image_urls": [
+        "/listing_images/url7.jpg"
+        ],
+        "embedding": [1.9, 2.0, 2.1],
+        "upload_date": "2025-09-05"
+    },
+    {
+        "id": 8,
+        "title_name": "Brand New Townhouse",
+        "address": "555 Progress Pl, Townsville, MA 02108",
+        "description": "Newly constructed 3-story townhouse. Modern finishes, open-concept living, and a private patio. Low HOA fees.",
+        "price": 520000.00,
+        "features": [
+        "3 Bed",
+        "2.5 Bath",
+        "1,800 sqft",
+        "New Construction",
+        "Private Patio",
+        "Low HOA"
+        ],
+        "image_urls": [
+        "/listing_images/url8.jpg"
+        ],
+        "embedding": [2.2, 2.3, 2.4],
+        "upload_date": "2025-10-28"
+    },
+    {
+        "id": 9,
+        "title_name": "Historic Brownstone",
+        "address": "666 Heritage Row, Old City, PA 19106",
+        "description": "Beautifully maintained historic brownstone. Original hardwood floors, high ceilings, and a charming enclosed garden.",
+        "price": 1250000.00,
+        "features": [
+        "5 Bed",
+        "3 Bath",
+        "2,500 sqft",
+        "Historic Detail",
+        "Enclosed Garden",
+        "Fireplaces"
+        ],
+        "image_urls": [
+        "/listing_images/url9.jpg"
+        ],
+        "embedding": [2.5, 2.6, 2.7],
+        "upload_date": "2025-09-01"
+    },
+    {
+        "id": 10,
+        "title_name": "Cozy Starter Home",
+        "address": "777 New Beginning Blvd, Starter City, AZ 85001",
+        "description": "Affordable 3 bed, 2 bath home. Move-in ready with a recently replaced roof and AC unit. Great for first-time buyers.",
+        "price": 280000.00,
+        "features": [
+        "3 Bed",
+        "2 Bath",
+        "1,300 sqft",
+        "New Roof",
+        "New AC",
+        "Patio"
+        ],
+        "image_urls": [
+        "/listing_images/url10.jpg"
+        ],
+        "embedding": [2.8, 2.9, 3.0],
+        "upload_date": "2025-10-18"
+    },
+    {
+        "id": 11,
+        "title_name": "Lakefront Dream House",
+        "address": "888 Water's Edge Dr, Lakeside, MN 55401",
+        "description": "Custom-built home with 100 feet of private lake frontage. Includes a private dock and a four-season sunroom.",
+        "price": 1550000.00,
+        "features": [
+        "4 Bed",
+        "3 Bath",
+        "3,000 sqft",
+        "Lake Frontage",
+        "Private Dock",
+        "Sunroom"
+        ],
+        "image_urls": [
+        "/listing_images/url11.jpg"
+        ],
+        "embedding": [3.1, 3.2, 3.3],
+        "upload_date": "2025-08-10"
+    },
+    {
+        "id": 12,
+        "title_name": "Compact Efficiency Apartment",
+        "address": "999 Metro Ave, Unit 2B, Technocity, WA 98101",
+        "description": "Highly efficient and compact living space. Close to transit, corporate offices, and nightlife. Low monthly utilities.",
+        "price": 180000.00,
+        "features": [
+        "Studio",
+        "1 Bath",
+        "400 sqft",
+        "Near Transit",
+        "Low Utilities",
+        "Secure Building"
+        ],
+        "image_urls": [
+        "/listing_images/url12.jpg"
+        ],
+        "embedding": [3.4, 3.5, 3.6],
+        "upload_date": "2025-10-05"
+    },
+    {
+        "id": 13,
+        "title_name": "Luxury Gated Community Villa",
+        "address": "111 Exclusive Cir, Gated Oaks, NV 89101",
+        "description": "Mediterranean-style villa in a secure, gated community. Features a private pool and a golf course view. HOA covers landscaping.",
+        "price": 895000.00,
+        "features": [
+        "4 Bed",
+        "4 Bath",
+        "2,900 sqft",
+        "Gated Community",
+        "Private Pool",
+        "Golf View"
+        ],
+        "image_urls": [
+        "/listing_images/url13.jpg"
+        ],
+        "embedding": [3.7, 3.8, 3.9],
+        "upload_date": "2025-09-22"
+    },
+    {
+        "id": 14,
+        "title_name": "Empty Residential Lot",
+        "address": "222 Future Home Pkwy, Growth Town, CO 80201",
+        "description": "Vacant residential lot ready for custom construction. Utilities are at the street. Located in a quickly developing area.",
+        "price": 95000.00,
+        "features": [
+        "Vacant Land",
+        "0.5 Acres",
+        "Utilities at Street",
+        "No HOA"
+        ],
+        "image_urls": [
+        "/listing_images/url14.jpg"
+        ],
+        "embedding": [4.0, 4.1, 4.2],
+        "upload_date": "2025-10-15"
+    },
+    {
+        "id": 15,
+        "title_name": "Two-Story Traditional",
+        "address": "333 Classic Ct, Heritage Hills, IL 60601",
+        "description": "Traditional two-story home with a finished basement. Formal dining room and a large family room. Mature trees on the property.",
+        "price": 415000.00,
+        "features": [
+        "4 Bed",
+        "2.5 Bath",
+        "2,300 sqft",
+        "Finished Basement",
+        "Formal Dining",
+        "Mature Trees"
+        ],
+        "image_urls": [
+        "/listing_images/url15.jpg"
+        ],
+        "embedding": [4.3, 4.4, 4.5],
+        "upload_date": "2025-09-12"
+    }
+    ]
+}

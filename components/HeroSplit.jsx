@@ -8,7 +8,7 @@ const HeroSplit = () => {
   return (
     // 1. Main container for the entire hero section
     <div className="flex flex-col h-screen bg-white"> 
-          
+      {/* ===  TOP NAVIGATION === */}    
       <NavBar/>
       {/*SPLIT CONTENT */}
       <div className="flex flex-grow"> 
