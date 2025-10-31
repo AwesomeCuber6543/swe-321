@@ -4,8 +4,8 @@ import Image from "next/image";
 const LoginPage = () => {
   return (
     <div className="flex h-screen bg-white">
-      
-      {/* Left Side: Login/Sign Up */}
+
+      {/* === Left Side: Login/Sign Up Options (50% Width) === */}
       <div className="w-1/2 flex flex-col items-center justify-center px-16">
         <div className="max-w-md w-full">
           <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center">
@@ -21,7 +21,7 @@ const LoginPage = () => {
 
           {/* Continue with Email Button */}
           <button className="w-full bg-blue-800 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition-colors mb-4 text-center">
-            Continue with Email
+            Login or Sign Up
           </button>
 
           <div className="text-center text-gray-400 my-4">— OR —</div>
@@ -37,16 +37,18 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* Right Side: Full-screen Home Image */}
+      {/* === Right Side: Full-screen Home Image (50% Width) === */}
       <div className="relative w-1/2 h-full overflow-hidden">
         <Image
           src="/images/login-house.jpg"
+          alt="Modern home interior"
           fill
           className="object-cover object-center"
           priority
           quality={100}
         />
       </div>
+
     </div>
   );
 };
