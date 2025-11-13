@@ -19,7 +19,11 @@ export default async function Search_Browse() {
 
     return (
         <main>
+            
+            {/* Navigation and Search Bar */}
+            <div className="sticky z-10 top-0 left-0 bg-white shadow-md">
             <NavBar/>
+
             {/* Search, Filter, and Sort Functionalities */}
             <div className="py-3 px-8 flex items-center gap-125 border border-gray-300">
                 <SearchBar/>
@@ -34,6 +38,8 @@ export default async function Search_Browse() {
                     </button> {/* TODO: Make Filter Dropdown Button Component*/}
                 </div>
             </div>
+            </div>
+
             {/* Listing Cards */}
             <div className="max-w-10xl mx-auto sm:px-6 lg:px-8 py-7"> 
                 <div className="grid grid-cols-4 gap-7">

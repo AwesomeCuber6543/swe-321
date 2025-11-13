@@ -7,6 +7,7 @@ const SearchBar = () =>  {
   return (
     <div className="flex items-center bg-blue-600 rounded-full shadow-md w-[700px] px-4 py-3 
                     transition duration-300 transform hover:scale-[1.01] cursor-pointer">
+        {/* Search Bar Input */}
         <input
             type="text"
             placeholder="e.g., single-story home with hardwood floors"
