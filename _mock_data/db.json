@@ -14,7 +14,8 @@
         "Walk to shops"
         ],
         "image_urls": [
-        "/listing_images/url1.jpg"
+        "/listing_images/url1.jpg",
+        "/listing_images/url16.jpg"
         ],
         "embedding": [0.1, 0.2, 0.3],
         "upload_date": "2025-09-15"

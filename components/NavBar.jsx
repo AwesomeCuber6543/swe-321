@@ -16,7 +16,7 @@ const NavBar = () =>  {
         
         {/* Right Nav Links (Saved Listings, Login/Sign Up) */}
         <div>
-          <a href="#" className="text-gray-600 hover:text-blue-800 mr-4 transition-colors transform hover:scale-105 duration-200">Saved Listings</a>
+          <a href="/Dashboard" className="text-gray-600 hover:text-blue-800 mr-4 transition-colors transform hover:scale-105 duration-200">Saved Listings</a>
           <Link href="/Login">
             <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-base font-semibold hover:bg-blue-700 transition-colors transform hover:scale-105 duration-200">
               Login / Sign Up

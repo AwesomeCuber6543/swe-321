@@ -10,18 +10,18 @@ const ListingModal = ({isOpen, onClose, RealEstateListing}) =>  {
     <div>
       {/* Blurred Background */}
       <div className="fixed z-100 top-0 left-0 w-full h-200 backdrop-blur-xs"></div>
-      
+
       {/* Actual Modal */}
       <div className="fixed z-200 top-0 left-35 w-300 h-200 shadow-lg bg-white rounded-lg" 
           onClick={onClose}>
-        <div onClick={(e)=>e.stopPropagation()}>
+        <div onClick={(e) => e.stopPropagation()}>
 
           {/* Top Navigation Bar of the Modal - Includes Close Modal, Share, and Save Button*/}
           <nav className="flex justify-end-safe py-5 shadow-md">
             <div className="space-x-20 pr-5">
-              <button className="font-bold text-blue-600 hover:text-blue-800">Save</button>
-              <button className="font-bold text-blue-600 hover:text-blue-800">Share</button>
-              <button className="w-8 rounded-md font-bold border border-blue-600 text-blue-600 hover:text-blue-800" 
+              <button className="font-bold text-blue-600 hover:text-blue-800 hover:scale-105 duration-200">Save</button>
+              <button className="font-bold text-blue-600 hover:text-blue-800 hover:scale-105 duration-200">Share</button>
+              <button className="w-8 rounded-md font-bold border border-blue-600 text-blue-600 hover:text-blue-800 hover:scale-105 duration-200" 
                       onClick={onClose}>X</button>
             </div>
           </nav>
