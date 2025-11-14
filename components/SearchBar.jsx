@@ -1,33 +1,41 @@
-"use client"; //to save input
-import React, {useState, useEffect} from 'react';
+"use client";
 
-//UI Component - search feature
-//Reuse of the search bar in ./HeroSplit.jx
-const SearchBar = () =>  {
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+const SearchBar = ({ initialQuery = "" }) => {
+  const [query, setQuery] = useState(initialQuery ?? "");
+  const router = useRouter();
+
+  useEffect(() => {
+    setQuery(initialQuery ?? "");
+  }, [initialQuery]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
+      router.push(`/Search_Browse?q=${encodeURIComponent(query)}`);
+    }
+  };
+
   return (
-    <div className="flex items-center bg-blue-600 rounded-full shadow-md w-[700px] px-4 py-3 
-                    transition duration-300 transform hover:scale-[1.01] cursor-pointer">
-        {/* Search Bar Input */}
-        <input
-            type="text"
-            placeholder="e.g., single-story home with hardwood floors"
-            className="flex-grow text-white placeholder-white/80 bg-transparent focus:outline-none text-center"
-        />
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="white"
-                className="w-5 h-5 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m21 21-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
-                />
-              </svg>
-    </div>
+    <form onSubmit={handleSearch} className="relative w-full">
+      <input
+        type="text"
+        value={query ?? ""}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Try: 3 bedroom house with modern kitchen"
+        className="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+      />
+      <button
+        type="submit"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m21 21-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+        </svg>
+      </button>
+    </form>
   );
 }
 

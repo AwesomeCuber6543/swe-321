@@ -1,54 +1,146 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../../contexts/AuthContext";
 
 const LoginPage = () => {
-  return (
-    <div className="flex h-screen bg-white">
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  
+  const { login, register, isAuthenticated } = useAuth();
+  const router = useRouter();
 
-      {/* === Left Side: Login/Sign Up Options (50% Width) === */}
-      <div className="w-1/2 flex flex-col items-center justify-center px-16">
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/Dashboard');
+    }
+  }, [isAuthenticated, router]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      let result;
+      if (isLogin) {
+        result = await login(email, password);
+      } else {
+        if (!firstName || !lastName) {
+          setError("Please fill in all fields");
+          setLoading(false);
+          return;
+        }
+        result = await register(email, password, firstName, lastName);
+      }
+
+      if (result.success) {
+        router.push('/Dashboard');
+      } else {
+        setError(result.error);
+      }
+    } catch (err) {
+      setError(err.message || "An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-screen bg-white">
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-8 md:px-16 py-12">
         <div className="max-w-md w-full">
-          <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center">
-            Login or Sign Up
+          <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            {isLogin ? "Welcome Back" : "Create Account"}
           </h1>
 
-          {/* Email Input */}
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-500"
-          />
+          {error && (
+            <div className="w-full bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">
+              {error}
+            </div>
+          )}
 
-          {/* Continue with Email Button */}
-          <button className="w-full bg-blue-800 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition-colors mb-4 text-center">
-            Continue
-          </button>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {!isLogin && (
+              <div className="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                  required={!isLogin}
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                  required={!isLogin}
+                />
+              </div>
+            )}
 
-          <div className="text-center text-gray-400 my-4">— OR —</div>
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+              required
+            />
 
-          {/* Social Login Buttons */}
-          <button className="w-full flex items-center justify-center border border-gray-300 bg-white py-3 rounded-lg text-gray-700 font-semibold mb-3 hover:bg-gray-50 transition-colors">
-            Continue with Google
-          </button>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+              required
+              minLength={6}
+            />
 
-          <button className="w-full flex items-center justify-center border border-gray-300 bg-white py-3 rounded-lg text-gray-700 font-semibold hover:bg-gray-50 transition-colors">
-            Continue with Apple
-          </button>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed shadow-sm"
+            >
+              {loading ? "Please wait..." : isLogin ? "Sign In" : "Create Account"}
+            </button>
+          </form>
+
+          <div className="text-center mt-6">
+            <button
+              onClick={() => {
+                setIsLogin(!isLogin);
+                setError("");
+              }}
+              className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+            >
+              {isLogin ? "Need an account? Sign up" : "Already have an account? Sign in"}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* === Right Side: Full-screen Home Image (50% Width) === */}
-      <div className="relative w-1/2 h-full overflow-hidden">
+      <div className="hidden md:block relative w-1/2">
         <Image
           src="/images/login-house.jpg"
           alt="Modern home interior"
           fill
-          className="object-cover object-center"
+          className="object-cover"
           priority
-          quality={100}
         />
       </div>
-
     </div>
   );
 };

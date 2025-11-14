@@ -1,7 +1,6 @@
 from datetime import datetime
 import pymysql
 from app.settings import get_settings
-from app.schemas.models import UserInDB
 
 settings = get_settings()
 

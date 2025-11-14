@@ -5,15 +5,22 @@ import time
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
-from celery import Celery
 from app.auth import *
-from app.schemas.models import *
-from .database import Database, get_db
+from schemas.models import *
+from app.database import Database, get_db
 from app.settings import get_settings
+from app.listings import router as listings_router
+
 
 settings: Settings = get_settings()
 
-app = FastAPI()
+app = FastAPI(
+    title="Real Estate API",
+    description="API for real estate listings with multimodal search powered by ColPali",
+    version="1.0.0"
+)
+
+app.include_router(listings_router, prefix="/api", tags=["listings"])
 
 app.add_middleware(
     CORSMiddleware,

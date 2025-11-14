@@ -6,10 +6,10 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from .settings import get_settings
-from .schemas.settings import Settings
-from .schemas.models import *
-from .database import Database, get_db
+from app.settings import get_settings
+from schemas.settings import Settings
+from schemas.models import *
+from app.database import Database, get_db
 
 settings: Settings = get_settings()
 

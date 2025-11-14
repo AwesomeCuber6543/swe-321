@@ -1,9 +1,11 @@
 import os
+from pathlib import Path
 from dotenv import load_dotenv
-from app.schemas.settings import Settings
+from schemas.settings import Settings
 
 def get_settings():
-    load_dotenv("project.env")
+    env_path = Path(__file__).parent.parent.parent / "project.env"
+    load_dotenv(env_path)
     
     settings_dict = {
         key: value 
